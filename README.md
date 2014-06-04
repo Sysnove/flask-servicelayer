@@ -1,5 +1,9 @@
 # LDAPOM Model
 
+This package provides some classes to build a Service layer and expose an API that interacts with the model. The first idea is to remove all logic of the routes and model of the Flask application, and put it in the service layer. The second goal is to provide a common API that can be use to manipulate a model regardless of its storage backend.
+
+## Sorry… What?
+
 A common Flask organisation consists in separating model (SQLAlchemy classes, for instance), and routes. When the application grows, you can also use Blueprints. On Blueprint by model for instance :
 
 ```
@@ -33,9 +37,7 @@ First, "model layer" is supposed to be only data storage manipulation. But putti
 
 Finally, if you want to replace SQL database by LDAP, you should be able to do it without modifying anything but the model. So you can't put any logic in "models.py". So, please, stop using SQLAlchemy methods in your views.
 
-So what then ?
-
-This package provides some classes to build a Service layer and expose an API that interacts with the model. The first idea is to remove all logic of the routes and model of the Flask application, and put it in the service layer. The second goal is to provide a common API that can be use to manipulate a model regardless of its storage backend.
+This package gives you a solution.
 
 ## Installation
 
