@@ -4,7 +4,7 @@ This package provides some classes to build a Service layer and expose an API th
 
 ## Sorry… What?
 
-A common Flask organisation consists in separating model (SQLAlchemy classes, for instance), and routes. When the application grows, you can also use Blueprints. On Blueprint by model for instance :
+A common Flask organisation consists in separating model (SQLAlchemy classes, for instance), and routes. When the application grows, you can also use Blueprints. One Blueprint by model for instance :
 
 ```
 app/ # Flask main application
