@@ -67,13 +67,17 @@ class ProductService(SQLAlchemyService):
 ```python
 products = ProductService()
 
-@product.route("/", methods=['GET', 'POST'])
+@product.route("/")
 def index():
+    return render_template('product/list.html', products=products.all())
+
+@product.route("/new", methods=['GET', 'POST'])
+def new():
     form = ProductForm()
     if form.validate_on_submit():
         products.create(**{field.name: field.data for field in form})
         return redirect(url_for('.index'))
-    return render_template('product/list.html', products=products.all(), form=form)
+    return render_template('product/new.html', form=form)
 
 @product.route("/delete/<int:id>")
 def delete(id):
