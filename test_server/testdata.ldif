@@ -1,0 +1,67 @@
+# example.com
+dn: dc=example,dc=com
+objectClass: dcObject
+objectClass: organization
+dc: example
+o: example
+
+# group, example, example.com
+dn: cn=group,dc=example,dc=com
+cn: group
+gidNumber: 10001
+objectClass: posixGroup
+memberUid: luke
+
+# jack, example.com
+dn: cn=jack,dc=example,dc=com
+objectClass: person
+objectClass: posixAccount
+cn: jack
+gidNumber: 11000
+homeDirectory: /home/jack
+sn: O'Niel
+uid: jack
+uidNumber: 11103
+userPassword: jack
+loginShell: /bin/bash
+
+# daniel, example.com
+dn: cn=daniel,dc=example,dc=com
+objectClass: person
+objectClass: posixAccount
+objectClass: inetOrgPerson
+cn: daniel
+gidNumber: 11000
+homeDirectory: /home/daniel
+sn: Jackson
+uid: daniel
+uidNumber: 11103
+userPassword: daniel
+loginShell: /bin/bash
+
+# sam, example.com
+dn: cn=sam,dc=example,dc=com
+objectClass: person
+objectClass: posixAccount
+cn: sam
+gidNumber: 11000
+homeDirectory: /home/sam
+sn: Carter
+uid: carter
+uidNumber: 11103
+userPassword: sam
+loginShell: /bin/bash
+
+# Noël, example.com
+dn: cn=Noël,dc=example,dc=com
+objectClass: person
+objectClass: posixAccount
+cn: Noël
+gidNumber: 11000
+homeDirectory: /home/Noel
+sn: Weihnachtsmann
+uid: Noel
+uidNumber: 11104
+userPassword: noel
+loginShell: /bin/bash
+
