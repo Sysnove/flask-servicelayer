@@ -303,6 +303,10 @@ class LDAPOMService(BaseService):
         else:
             return res[0]
 
+    def _preprocess_params(self, kwargs):
+        kwargs = super()._preprocess_params(kwargs)
+        return {k: v for k, v in kwargs.items() if v != ''}
+
     def new(self, **kwargs):
         return self.__model__(self.__ldap__, self._compute_dn(kwargs),
                               **self._preprocess_params(kwargs))

@@ -148,6 +148,10 @@ class TestLDAPModel(LDAPServerMixin, unittest.TestCase):
         jack = self.service.get("jack")
         self.assertEqual(jack.shell, "/bin/bash")
         self.assertEqual(jack.phone, {"4242424242"})
+        jack = self.service.get("jack")
+        self.service.update(jack, phone="")
+        jack = self.service.get("jack")
+        self.assertEqual(jack.phone, set())
 
     def test_delete(self):
         jack = self.service.get("jack")
