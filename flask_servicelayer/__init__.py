@@ -262,10 +262,6 @@ class LDAPOMService(BaseService):
                              kwargs[self.__model__._rdn],
                              self.__ldap__._base)
 
-    def _preprocess_params(self, kwargs):
-        kwargs = super()._preprocess_params(kwargs)
-        return {k: v for k, v in kwargs.items() if v != ''}
-
     def save(self, obj):
         obj.save()
         return obj
@@ -313,6 +309,9 @@ class LDAPOMService(BaseService):
 
     def update(self, obj, **kwargs):
         self._isinstance(obj)
+        for k, v in kwargs.items():
+            if v == '':
+                delattr(obj, k)
         for k, v in self._preprocess_params(kwargs).items():
             setattr(obj, k, v)
         self.save(obj)
