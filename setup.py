@@ -9,7 +9,7 @@ def read(fname):
  
 setup(
     name='Flask-ServiceLayer',
-    version='0.0.3',
+    version='0.0.4',
     packages=find_packages(),
     author="Guillaume Subiron",
     author_email="maethor+pip@subiron.org",
