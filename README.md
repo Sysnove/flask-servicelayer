@@ -45,7 +45,7 @@ This package gives you a solution.
 
 ## Example
 
-The package provides to main classes, one to build a Flask SQLAlchemy-based service, and one to build a LDAPom-model-based service.
+The package provides two main classes, one to build a Flask SQLAlchemy-based service, and one to build a LDAPom-model-based service.
 
 ### SQLAlchemyService
 
