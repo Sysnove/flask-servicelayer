@@ -140,7 +140,6 @@ class BaseService(object):
             :param **kwargs: instance parameters
         """
 
-    @abc.abstractmethod
     def create(self, **kwargs):
         """
             Returns a new, saved instance of the service's model class.
